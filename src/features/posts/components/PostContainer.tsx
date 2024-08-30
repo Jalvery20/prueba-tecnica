@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import PostTable from './PostTable';
+//import PostTable from './PostTable';
 import PostModalForm from './PostModalForm';
 import { Button } from '@nextui-org/react';
-import ToastNotification from './ToastNotification';
+//import ToastNotification from './ToastNotification';
 
 const PostsContainer = () => {
   const [modalVisible, setModalVisible] = useState(false);
