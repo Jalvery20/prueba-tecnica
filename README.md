@@ -26,7 +26,7 @@ pnpm install
 
 ```
 
-# Una vez que las dependencias estén instaladas, puedes ejecutar el servidor de desarrollo:
+## Una vez que las dependencias estén instaladas, puedes ejecutar el servidor de desarrollo:
 
 ```bash
 npm run dev
