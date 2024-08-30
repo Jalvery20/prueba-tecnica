@@ -12,16 +12,13 @@ import {
 } from '@nextui-org/react';
 import { useAsyncList } from '@react-stately/data';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
-import { fetchPosts, deletePost, clearNotification } from '@/features/posts/model/postsSlice';
+import { fetchPosts, deletePost, clearNotification } from '@/features/model/postsSlice';
 import { showToast } from './ToastNotification';
 import TableActions from '@/shared/ui/TableActions';
 import PostSearchInput from '@/shared/ui/PostSearchInput';
+import { Post } from '@/features/types';
 
-interface Post {
-  id: number;
-  title: string;
-  body: string;
-}
+
 
 const columns = [
   { name: 'TÍTULO DEL POST', uid: 'title' },
@@ -29,9 +26,15 @@ const columns = [
   { name: 'ACCIONES', uid: 'actions' },
 ];
 
+interface PostsState {
+  posts: Post[];
+  loading: boolean;
+  notification: { message: string; type: 'success' | 'error' } | null;
+}
+
 export default function PostTable({ onEdit }: { onEdit: (post: Post) => void }) {
   const dispatch = useAppDispatch();
-  const { posts, loading, notification } = useAppSelector((state) => state.posts);
+  const { posts, loading, notification } = useAppSelector((state: { posts: PostsState }) => state.posts);
   const [filterValue, setFilterValue] = useState('');
   const [page, setPage] = useState(1);
 

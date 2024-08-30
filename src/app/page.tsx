@@ -1,6 +1,6 @@
 'use client';
 
-import Posts from '@/features/posts/components/PostContainer';
+import Posts from '@/components/PostContainer';
 
 export default function PostsPage() {
   return (

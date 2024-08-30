@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { Button, Input } from '@nextui-org/react';
 import { useAppDispatch } from '@/shared/lib/hooks';
-import { createPost, updatePost } from '@/features/posts/model/postsSlice';
+import { createPost, updatePost } from '@/features/model/postsSlice';
 import CustomModal from '@/shared/ui/Modal';
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
