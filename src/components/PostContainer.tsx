@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import PostTable from './PostTable';
-//import PostModalForm from './PostModalForm';
+import PostModalForm from './PostModalForm';
 import { Button } from '@nextui-org/react';
 import ToastNotification from './ToastNotification';
 
@@ -30,9 +30,9 @@ const PostsContainer = () => {
       >
         Crear Nuevo Post
       </Button>
-      {/*<ToastNotification />*/}
+      <ToastNotification />
       <PostTable onEdit={handleEditPost} />
-      {/*<PostModalForm visible={modalVisible} onClose={() => setModalVisible(false)} post={selectedPost} />*/}
+      <PostModalForm visible={modalVisible} onClose={() => setModalVisible(false)} post={selectedPost} />
     </>
   );
 };

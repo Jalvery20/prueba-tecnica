@@ -1,11 +1,11 @@
-"use client"
+'use client'
 import React, { useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { Button, Input } from '@nextui-org/react';
 import { useAppDispatch } from '@/shared/lib/hooks';
 import { createPost, updatePost } from '@/features/posts/model/postsSlice';
 import CustomModal from '@/shared/ui/Modal';
-import ReactQuill from 'react-quill';
+import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 
 interface PostModalFormProps {
@@ -13,6 +13,8 @@ interface PostModalFormProps {
   onClose: () => void;
   post: { id: number; title: string; body: string } | null;
 }
+// Importar ReactQuill dinámicamente solo en el cliente
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 const PostModalForm: React.FC<PostModalFormProps> = ({ visible, onClose, post }) => {
   const dispatch = useAppDispatch();
