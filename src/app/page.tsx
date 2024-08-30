@@ -1,5 +1,3 @@
-'use client';
-
 import Posts from '@/components/PostContainer';
 
 export default function PostsPage() {

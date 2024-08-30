@@ -118,7 +118,7 @@ export default function PostTable({ onEdit }: { onEdit: (post: Post) => void }) 
       <PostSearchInput value={filterValue} onChange={setFilterValue} />
       <Table
         aria-label='A posts Table'
-        classNames={{ table: 'min-h-[200px]' }}
+        classNames={{ table: 'min-h-[200px] mt-4' }}
         bottomContent={
           totalPages !== 0 && (
             <div className='flex w-full justify-center'>
