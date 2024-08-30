@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { ToastContainer, toast, ToastOptions } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React, { useEffect, useState } from 'react';
 import {
   Spinner,
@@ -42,7 +42,7 @@ export default function PostTable({ onEdit }: { onEdit: (post: Post) => void }) 
     async load() {
       if (posts.length === 0) {
         const { payload } = await dispatch(fetchPosts());
-        return { items: payload };
+        return { items: payload ? payload : [] };
       }
       return { items: posts };
     },
@@ -60,6 +60,7 @@ export default function PostTable({ onEdit }: { onEdit: (post: Post) => void }) 
   });
 
   useEffect(() => {
+    if(posts.length ===0) return
     list.reload();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [posts]);

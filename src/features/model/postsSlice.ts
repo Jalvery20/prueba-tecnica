@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, createAsyncThunk, ActionFromReducer, ActionCreatorWithPayload, Action, UnknownAction, AnyAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { Post } from '@/features/types';
 
@@ -23,6 +23,7 @@ const initialState: PostsState = {
 
 // Acciones asíncronas
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
+  
   const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
   return response.data;
 });
@@ -73,10 +74,6 @@ const postsSlice = createSlice({
       state.posts = action.payload;
       state.loading = false;
     });
-    builder.addCase(fetchPosts.rejected, (state, action) => {
-      state.loading = false;
-      state.error = action.error.message || 'Failed to fetch posts';
-    });
 
     // Create post
     builder.addCase(createPost.fulfilled, (state, action: PayloadAction<Post>) => {
@@ -101,9 +98,10 @@ const postsSlice = createSlice({
 
     // Errores en las acciones asíncronas
     builder.addMatcher(
-      (action) => action.type.endsWith('/rejected'),
-      (state) => {
-        state.notification = { message: 'Error en la operación', type: 'error' };
+      (action: AnyAction & { error?: { message?: string } }) => action.type.endsWith('/rejected'),
+      (state, action : AnyAction) => {
+        const errorMessage = action.error?.message || 'Error desconocido';
+        state.notification = { message: `Ha ocurrido un error: ${errorMessage}`, type: 'error' };
       }
     );
   },
