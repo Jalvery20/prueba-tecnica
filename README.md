@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Proyecto Next.js
 
-## Getting Started
+Este es un proyecto [Next.js](https://nextjs.org/) creado con [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). El proyecto incluye características modernas de desarrollo web utilizando React y la infraestructura de Next.js.
 
-First, run the development server:
+## Tabla de Contenidos
+
+- [Comenzando](#comenzando)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Comandos Disponibles](#comandos-disponibles)
+- [Optimización de Fuentes](#optimización-de-fuentes)
+- [Recursos Adicionales](#recursos-adicionales)
+- [Despliegue en Vercel](#despliegue-en-vercel)
+
+## Comenzando
+
+Para comenzar con el proyecto, primero clona el repositorio y luego instala las dependencias:
 
 ```bash
+git clone https://github.com/tu-usuario/tu-repositorio.git
+cd tu-repositorio
+npm install
+# o
+yarn install
+# o
+pnpm install
+
+Una vez que las dependencias estén instaladas, puedes ejecutar el servidor de desarrollo:
+
 npm run dev
-# or
+# o
 yarn dev
-# or
+# o
 pnpm dev
-# or
+# o
 bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre http://localhost:3000 en tu navegador para ver el resultado. La aplicación se recargará automáticamente si editas los archivos del proyecto.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Estructura del Proyecto
+El proyecto sigue la estructura estándar de un proyecto de Next.js, que incluye los siguientes directorios y archivos principales:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+app/: Contiene los componentes de página y las rutas del proyecto.
+components/: Contiene los componentes reutilizables del proyecto.
+styles/: Contiene los archivos de estilo global y módulos CSS.
+public/: Contiene activos estáticos como imágenes y fuentes que se servirán de forma pública.
+next.config.js: Archivo de configuración de Next.js.
+tsconfig.json: Archivo de configuración de TypeScript.
+Puedes comenzar a editar las páginas modificando app/page.tsx. Los cambios se reflejarán automáticamente en el navegador.
 
-## Learn More
+Comandos Disponibles
+El proyecto incluye varios comandos útiles para el desarrollo y despliegue:
 
-To learn more about Next.js, take a look at the following resources:
+npm run dev: Inicia el servidor de desarrollo en modo de desarrollo.
+npm run build: Compila la aplicación para producción.
+npm start: Inicia un servidor de producción local para la aplicación compilada.
+npm run lint: Ejecuta linters para mantener la calidad del código.
+npm run test: Ejecuta pruebas unitarias si están configuradas.
+Optimización de Fuentes
+Este proyecto utiliza next/font para optimizar automáticamente y cargar la fuente Inter de Google. Esto mejora el rendimiento y la accesibilidad del sitio web.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Recursos Adicionales
+Para aprender más sobre Next.js, revisa los siguientes recursos:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Documentación de Next.js: Aprende sobre las características y la API de Next.js.
+Aprende Next.js: Un tutorial interactivo para comenzar con Next.js.
+Repositorio de GitHub de Next.js: Revisa el código fuente de Next.js y contribuye.
+Despliegue en Vercel
+La forma más sencilla de desplegar tu aplicación Next.js es utilizando la Plataforma Vercel, creada por los desarrolladores de Next.js.
 
-## Deploy on Vercel
+Consulta nuestra documentación de despliegue de Next.js para obtener más detalles.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+¡Gracias por usar este proyecto! Si tienes alguna pregunta o sugerencia, no dudes en abrir un issue o enviar una solicitud de extracción en el repositorio.

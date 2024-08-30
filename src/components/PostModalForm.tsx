@@ -1,4 +1,20 @@
 'use client'
+
+/**
+ * PostModalForm Component
+ * 
+ * Este componente representa un formulario modal para la creación y edición de posts.
+ * Utiliza `react-hook-form` para la gestión de formularios y `react-quill` para un editor de texto enriquecido.
+ * 
+ * Props:
+ * - `visible` (boolean): Determina si el modal es visible o no.
+ * - `onClose` (function): Función a ejecutar cuando el modal se cierra.
+ * - `post` (object | null): El post actual que se va a editar. Si es `null`, se crea un nuevo post.
+ * 
+ * Ejemplo de uso:
+ * <PostModalForm visible={true} onClose={() => {}} post={null} />
+ */
+
 import React, { useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { Button, Input } from '@nextui-org/react';
@@ -25,6 +41,7 @@ const PostModalForm: React.FC<PostModalFormProps> = ({ visible, onClose, post })
     }
   });
 
+  // useEffect para resetear el formulario al cambiar el post o la visibilidad
   useEffect(() => {
     if (post && visible) {
       reset({ title: post.title, body: post.body });
@@ -33,6 +50,7 @@ const PostModalForm: React.FC<PostModalFormProps> = ({ visible, onClose, post })
     }
   }, [post, visible, reset]);
 
+  // Maneja la acción de enviar el formulario para crear o actualizar un post
   const onSubmit = async (data: { title: string; body: string }) => {
     try {
       if (post) {

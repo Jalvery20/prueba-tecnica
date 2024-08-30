@@ -1,4 +1,22 @@
 'use client'
+
+/**
+ * TableActions Component
+ * 
+ * Este componente representa un conjunto de acciones que se pueden realizar en una tabla, como editar o eliminar.
+ * Utiliza iconos de `react-icons` y `Tooltip` de `@nextui-org/react` para mejorar la experiencia de usuario.
+ * 
+ * Props:
+ * - `onEdit` (function): Función a ejecutar cuando se selecciona la acción de editar.
+ * - `onDelete` (function): Función a ejecutar cuando se selecciona la acción de eliminar.
+ * 
+ * Ejemplo de uso:
+ * <TableActions 
+ *   onEdit={() => console.log('Editar post')} 
+ *   onDelete={() => console.log('Eliminar post')} 
+ * />
+ */
+
 import React from 'react';
 import { Tooltip } from '@nextui-org/react';
 import { FiEdit as PostEditIcon } from 'react-icons/fi';

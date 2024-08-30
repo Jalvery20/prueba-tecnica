@@ -1,4 +1,18 @@
 'use client'
+
+/**
+ * PostTable Component
+ * 
+ * Este componente representa una tabla de posts con opciones de búsqueda, paginación y acciones (editar/eliminar).
+ * Utiliza `@nextui-org/react` para los componentes de interfaz de usuario y `@react-stately/data` para la gestión de datos asincrónicos.
+ * 
+ * Props:
+ * - `onEdit` (function): Función a ejecutar cuando se selecciona la opción de editar un post.
+ * 
+ * Ejemplo de uso:
+ * <PostTable onEdit={(post) => console.log(post)} />
+ */
+
 import React, { useEffect, useState } from 'react';
 import {
   Spinner,
@@ -38,6 +52,7 @@ export default function PostTable({ onEdit }: { onEdit: (post: Post) => void }) 
   const [filterValue, setFilterValue] = useState('');
   const [page, setPage] = useState(1);
 
+  // Carga y gestión de datos de la tabla
   let list = useAsyncList<Post>({
     async load() {
       if (posts.length === 0) {
@@ -78,6 +93,7 @@ export default function PostTable({ onEdit }: { onEdit: (post: Post) => void }) 
     } catch (error) {}
   };
 
+  // Filtrado y paginación de los posts
   const filteredPosts = list.items.filter((post) => {
     const searchTerm = filterValue.toLowerCase();
     return Object.values(post).some((value) =>
@@ -88,6 +104,7 @@ export default function PostTable({ onEdit }: { onEdit: (post: Post) => void }) 
   const paginatedPosts = filteredPosts.slice((page - 1) * 10, page * 10);
   const totalPages = Math.ceil(filteredPosts.length / 10);
 
+  // Renderizado de cada celda de la tabla
   const renderCell = (post: Post, columnKey: React.Key) => {
     const cellValue = post[columnKey as keyof Post];
     switch (columnKey) {
