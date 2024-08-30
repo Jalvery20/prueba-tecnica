@@ -30,8 +30,8 @@ const PostsContainer = () => {
       >
         Crear Nuevo Post
       </Button>
-      <ToastNotification />
-      <PostTable onEdit={handleEditPost} />
+      {/*<ToastNotification />*/}
+      {/*<PostTable onEdit={handleEditPost} />*/}
       <PostModalForm visible={modalVisible} onClose={() => setModalVisible(false)} post={selectedPost} />
     </>
   );
