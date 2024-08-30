@@ -9,13 +9,13 @@ import {
   TableRow,
   TableCell,
   Pagination,
+  Input,
 } from '@nextui-org/react';
 import { useAsyncList } from '@react-stately/data';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
 import { fetchPosts, deletePost, clearNotification } from '@/features/model/postsSlice';
 import { showToast } from './ToastNotification';
 import TableActions from '@/shared/ui/TableActions';
-import PostSearchInput from '@/shared/ui/PostSearchInput';
 import { Post } from '@/features/types';
 
 
@@ -115,10 +115,18 @@ export default function PostTable({ onEdit }: { onEdit: (post: Post) => void }) 
 
   return (
     <div>
-      <PostSearchInput value={filterValue} onChange={setFilterValue} />
+      <Input
+        isClearable
+        fullWidth
+        color='secondary'
+        placeholder='Buscar por título...'
+        value={filterValue}
+        className='mb-4'
+        onChange={(e) => setFilterValue(e.target.value)}
+      />
       <Table
         aria-label='A posts Table'
-        classNames={{ table: 'min-h-[200px] mt-4' }}
+        classNames={{ table: 'min-h-[200px]' }}
         bottomContent={
           totalPages !== 0 && (
             <div className='flex w-full justify-center'>
