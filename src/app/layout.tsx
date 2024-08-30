@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import {NextUIProvider} from "@nextui-org/react";
-import StoreProvider from "./StoreProvider";
+import StoreProvider from "../shared/lib/StoreProvider";
 
 export const metadata: Metadata = {
   title: "Prueba Técnica",
