@@ -6,7 +6,7 @@ import { useAppDispatch } from '@/shared/lib/hooks';
 import { createPost, updatePost } from '@/features/posts/model/postsSlice';
 import CustomModal from '@/shared/ui/Modal';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // Importar el tema de Quill
+import 'react-quill/dist/quill.snow.css';
 
 interface PostModalFormProps {
   visible: boolean;
