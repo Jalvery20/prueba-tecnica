@@ -24,8 +24,11 @@ yarn install
 # o
 pnpm install
 
-Una vez que las dependencias estén instaladas, puedes ejecutar el servidor de desarrollo:
+```
 
+# Una vez que las dependencias estén instaladas, puedes ejecutar el servidor de desarrollo:
+
+```bash
 npm run dev
 # o
 yarn dev
@@ -34,9 +37,11 @@ pnpm dev
 # o
 bun dev
 
+```
+
 Abre http://localhost:3000 en tu navegador para ver el resultado. La aplicación se recargará automáticamente si editas los archivos del proyecto.
 
-Estructura del Proyecto
+## Estructura del Proyecto
 El proyecto sigue la estructura estándar de un proyecto de Next.js, que incluye los siguientes directorios y archivos principales:
 
 app/: Contiene los componentes de página y las rutas del proyecto.
@@ -47,7 +52,7 @@ next.config.js: Archivo de configuración de Next.js.
 tsconfig.json: Archivo de configuración de TypeScript.
 Puedes comenzar a editar las páginas modificando app/page.tsx. Los cambios se reflejarán automáticamente en el navegador.
 
-Comandos Disponibles
+## Comandos Disponibles
 El proyecto incluye varios comandos útiles para el desarrollo y despliegue:
 
 npm run dev: Inicia el servidor de desarrollo en modo de desarrollo.
@@ -58,7 +63,7 @@ npm run test: Ejecuta pruebas unitarias si están configuradas.
 Optimización de Fuentes
 Este proyecto utiliza next/font para optimizar automáticamente y cargar la fuente Inter de Google. Esto mejora el rendimiento y la accesibilidad del sitio web.
 
-Recursos Adicionales
+## Recursos Adicionales
 Para aprender más sobre Next.js, revisa los siguientes recursos:
 
 Documentación de Next.js: Aprende sobre las características y la API de Next.js.
@@ -67,6 +72,6 @@ Repositorio de GitHub de Next.js: Revisa el código fuente de Next.js y contribu
 Despliegue en Vercel
 La forma más sencilla de desplegar tu aplicación Next.js es utilizando la Plataforma Vercel, creada por los desarrolladores de Next.js.
 
-Consulta nuestra documentación de despliegue de Next.js para obtener más detalles.
+Consulta la documentación de despliegue de Next.js para obtener más detalles.
 
 ¡Gracias por usar este proyecto! Si tienes alguna pregunta o sugerencia, no dudes en abrir un issue o enviar una solicitud de extracción en el repositorio.
