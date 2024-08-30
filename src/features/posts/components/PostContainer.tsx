@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-//import PostTable from './PostTable';
-import PostModalForm from './PostModalForm';
+import PostTable from './PostTable';
+//import PostModalForm from './PostModalForm';
 import { Button } from '@nextui-org/react';
-//import ToastNotification from './ToastNotification';
+import ToastNotification from './ToastNotification';
 
 const PostsContainer = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -31,8 +31,8 @@ const PostsContainer = () => {
         Crear Nuevo Post
       </Button>
       {/*<ToastNotification />*/}
-      {/*<PostTable onEdit={handleEditPost} />*/}
-      <PostModalForm visible={modalVisible} onClose={() => setModalVisible(false)} post={selectedPost} />
+      <PostTable onEdit={handleEditPost} />
+      {/*<PostModalForm visible={modalVisible} onClose={() => setModalVisible(false)} post={selectedPost} />*/}
     </>
   );
 };
